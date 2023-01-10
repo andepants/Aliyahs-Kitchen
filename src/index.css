@@ -9,19 +9,8 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  @layer text-rendering-optimize-legibility;
-  @layer -webkit-font-smoothing-antialiased;
-  @layer -moz-osx-font-smoothing-grayscale;
-  @layer -webkit-text-size-adjust-100%;
-  @layer -webkit-text-size-adjust-100%;
 }
 
-a {
-  font-weight: 500;
-  @layer :--light-dark-color:light;
-  text-decoration: inherit;
-  @layer :--light-dark-color-hover:light;
-}
 
 body {
   margin: 0;

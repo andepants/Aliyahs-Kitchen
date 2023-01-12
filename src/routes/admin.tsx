@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { addDoc } from "firebase/firestore";
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 export default function Admin() {
   const [newName, setNewName] = useState("");
@@ -7,7 +8,10 @@ export default function Admin() {
   const [newType, setNewType] = useState("");
   const [newDescription, setNewDescription] = useState("");
 
+  const menuCollectionRef = firebase.firestore().collection("menu");
+
   const createMenuItem = async () => {
+    await menuCollectionRef.add({ name: newName, price: newPrice, type: newType, description: newDescription });
 
   }
 

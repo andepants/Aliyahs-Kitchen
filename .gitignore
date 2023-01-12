@@ -1,3 +1,7 @@
+firebase-config.js
+.env.js
+.env
+
 # Logs
 logs
 *.log

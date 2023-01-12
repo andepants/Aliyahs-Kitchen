@@ -1,8 +1,9 @@
+// @ts-ignore
+import '../firebase-config.js';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import ErrorPage from './error-page'
-// import "./firebase.js";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -22,8 +23,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-      path: "menu",
-      element: <Menu />,
+        path: "menu",
+        element: <Menu />,
       },
     ],
   },

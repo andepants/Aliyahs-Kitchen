@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { useState, useEffect } from 'react'
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import './App.css'
 import { db } from '../firebase-config';
@@ -24,6 +24,15 @@ function App() {
   return (
     <div className="App relative">
       <h1 className="relative top-0 text-orange-500 m-4 leading-10">Aliyah's Kitchen</h1>
+      <Link to="/admin">
+            <button>Go to admin</button>
+        </Link>
+        <Link to="/home">
+            <button>Go to home</button>
+        </Link>
+        <Link to="/menu">
+            <button>Go to menu</button>
+        </Link>
       <Outlet />
     </div>
   )

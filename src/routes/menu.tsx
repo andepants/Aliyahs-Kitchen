@@ -7,7 +7,11 @@ import 'firebase/functions';
 
 export default function Menu() {
 
-  const { data, status } = useQuery('menu', () => firebase.firestore().collection("menu").get().then(snapshot => snapshot.docs.map((doc) => ({...doc.data(), id: doc.id}))))
+  const { data, status } = useQuery('menu', () => firebase
+    .firestore()
+    .collection("menu")
+    .get()
+    .then(snapshot => snapshot.docs.map((doc) => ({...doc.data(), id: doc.id}))));
 
   return (
     <div>

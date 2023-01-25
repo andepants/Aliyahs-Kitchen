@@ -13,7 +13,9 @@ function App() {
   const getMenu = async () => {
     try {
       const querySnapshot = await menuCollectionRef.get();
-      return querySnapshot.docs.map((doc) => ({...doc.data(), id: doc.id}))
+      const newMenu = querySnapshot.docs.map((doc) => ({...doc.data(), id: doc.id}))
+      console.log(newMenu)
+      return newMenu;
     } catch (error) {
       throw error;
     }
@@ -25,14 +27,14 @@ function App() {
     <div className="App relative">
       <h1 className="relative top-0 text-orange-500 m-4 leading-10">Aliyah's Kitchen</h1>
       <Link to="/admin">
-            <button>Go to admin</button>
-        </Link>
-        <Link to="/home">
-            <button>Go to home</button>
-        </Link>
-        <Link to="/menu">
-            <button>Go to menu</button>
-        </Link>
+        <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-.5 px-2 mx-1">Go to admin</button>
+      </Link>
+      <Link to="/home">
+        <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-.5 px-2 mx-1">Go to home</button>
+      </Link>
+      <Link to="/menu">
+        <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-.5 px-2 mx-1">Go to menu</button>
+      </Link>
       <Outlet />
     </div>
   )
